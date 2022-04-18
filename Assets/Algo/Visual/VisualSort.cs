@@ -15,6 +15,7 @@ public partial class VisualSort : MonoBehaviour
 
     private Material _white;
     private Material _red;
+    private Material _blue;
 
     #endregion
 
@@ -34,6 +35,11 @@ public partial class VisualSort : MonoBehaviour
         {
             hideFlags = HideFlags.HideAndDontSave,
             color = Color.yellow
+        };
+        _blue  = new Material(Shader.Find("UI/Default"))
+        {
+            hideFlags = HideFlags.HideAndDontSave,
+            color = Color.blue
         };
     }
 
@@ -81,7 +87,10 @@ public partial class VisualSort : MonoBehaviour
                 StartCoroutine(Insertion());
                 break;
             case SortEnum.QuickSort:
-                StartCoroutine(QuickSort());
+                StartCoroutine(QuickSort( 0 , _dataArray.Length-1));
+                break;
+            case SortEnum.Selection:
+                StartCoroutine(SelectionSort());
                 break;
         }
     }
@@ -94,6 +103,8 @@ public partial class VisualSort : MonoBehaviour
                 return _white;
             case SortDataState.Sorted:
                 return _red;
+            case SortDataState.Selected:
+                return _blue;
         }
         return null;
     }

@@ -2,6 +2,7 @@
 {
     Default = 0,
     Sorted = 1,
+    Selected = 2,
 }
 
 public class VisualSortData
