@@ -26,6 +26,7 @@ public partial class VisualSort : MonoBehaviour
     {
         screenSize = new Vector2(Screen.width, Screen.height);
         Initial();
+        //生成几个颜色的材质球
         _white = new Material(Shader.Find("UI/Default"))
         {
             hideFlags = HideFlags.HideAndDontSave,
@@ -45,6 +46,7 @@ public partial class VisualSort : MonoBehaviour
 
     private void Update()
     {
+        //根据数组来显示
         for (int i = 0; i < randomNumCont; i++)
         {
             _visualDataArray[i].localScale = new Vector3(1 ,_dataArray[i].Value /100f,1 );
@@ -91,6 +93,9 @@ public partial class VisualSort : MonoBehaviour
                 break;
             case SortEnum.Selection:
                 StartCoroutine(SelectionSort());
+                break;
+            case SortEnum.HeapSort:
+                StartCoroutine(HeapSort());
                 break;
         }
     }
