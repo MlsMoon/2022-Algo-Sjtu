@@ -97,6 +97,9 @@ public partial class VisualSort : MonoBehaviour
             case SortEnum.HeapSort:
                 StartCoroutine(HeapSort());
                 break;
+            case SortEnum.ThreeWayQuickSort:
+                StartCoroutine(ThreeWayQuickSort(0, _dataArray.Length - 1));
+                break;
         }
     }
 
@@ -112,6 +115,13 @@ public partial class VisualSort : MonoBehaviour
                 return _blue;
         }
         return null;
+    }
+    
+    private void Swap(int indexA, int indexB)
+    {
+        var temp = _dataArray[indexA];
+        _dataArray[indexA] = _dataArray[indexB];
+        _dataArray[indexB] = temp;
     }
 
 }

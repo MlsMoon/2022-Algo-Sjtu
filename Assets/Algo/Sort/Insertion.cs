@@ -15,9 +15,7 @@ public partial class VisualSort
                 if (_dataArray[j].Value < _dataArray[j - 1].Value)
                 {
                     //交换位置
-                    var temp = _dataArray[j];
-                    _dataArray[j] = _dataArray[j - 1];
-                    _dataArray[j - 1] = temp;
+                    Swap(j,j-1);
                     yield return new WaitForSeconds(0.1f);
                 }
             }

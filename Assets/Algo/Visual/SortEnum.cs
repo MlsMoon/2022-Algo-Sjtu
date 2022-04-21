@@ -4,4 +4,5 @@
     QuickSort = 1,
     Selection = 2,
     HeapSort = 3,
+    ThreeWayQuickSort = 4,
 }
