@@ -3,7 +3,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-
+/// <summary>
+/// 可视化排序界面
+/// </summary>
 public partial class VisualSort : MonoBehaviour
 {
     #region Properties
@@ -22,6 +24,9 @@ public partial class VisualSort : MonoBehaviour
 
     #region Mono
 
+    /// <summary>
+    /// 生命值周期开始时调用一次，初始化
+    /// </summary>
     private void Awake()
     {
         screenSize = new Vector2(Screen.width, Screen.height);
@@ -44,6 +49,9 @@ public partial class VisualSort : MonoBehaviour
         };
     }
 
+    /// <summary>
+    /// 每帧调用一次，根据数据进行可视化
+    /// </summary>
     private void Update()
     {
         //根据数组来显示
@@ -99,6 +107,9 @@ public partial class VisualSort : MonoBehaviour
                 break;
             case SortEnum.ThreeWayQuickSort:
                 StartCoroutine(ThreeWayQuickSort(0, _dataArray.Length - 1));
+                break;
+            case SortEnum.MergeSortTd:
+                StartCoroutine(MergeSortTd(0, _dataArray.Length - 1));
                 break;
         }
     }

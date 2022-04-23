@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// UI菜单界面
+/// </summary>
 public class Menu : MonoBehaviour
 {
     public Transform sortPanel;

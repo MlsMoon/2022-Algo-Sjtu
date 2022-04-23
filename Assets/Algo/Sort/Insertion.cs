@@ -6,9 +6,9 @@ public partial class VisualSort
 {
     IEnumerator Insertion()
     {
+        _dataArray[0].DataState = SortDataState.Sorted;
         for (int i = 1; i < _dataArray.Length; i++)
         {
-            _dataArray[0].DataState = SortDataState.Sorted;
             _dataArray[i].DataState = SortDataState.Sorted;
             for (int j = i; j > 0; j--)
             {
