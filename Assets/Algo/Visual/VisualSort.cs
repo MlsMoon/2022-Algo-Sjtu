@@ -111,6 +111,9 @@ public partial class VisualSort : MonoBehaviour
             case SortEnum.MergeSortTd:
                 StartCoroutine(MergeSortTd(0, _dataArray.Length - 1));
                 break;
+            case SortEnum.MergeSortBu:
+                StartCoroutine(MergeSortBu());
+                break;
         }
     }
 
